@@ -16,5 +16,7 @@ FROM nginx
 
 # for single container docker
 EXPOSE 80
-COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+
+# for multicontainer docker using nginx routing
+# COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /app/build  /usr/share/nginx/html
